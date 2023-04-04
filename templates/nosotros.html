@@ -1,0 +1,12 @@
+{%extends 'layouts/base.html'%}
+{%block content%}
+<h3>Sobre nosotros</h3>
+<p class="title">Paises</p>
+<ul class="paises">
+    {% for pais in lista_paises %}
+    <a href="{%url 'pais' id=pais.id%}"><li class="btn-sm">{{pais.pais}}</li></a>
+    {% endfor %}
+</ul>
+<p class="title">Equipo </p>
+<div class="btn-sm"><a href="{% url 'empleados' %}">{{empleados}}</a></div>
+{%endblock%}

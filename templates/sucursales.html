@@ -1,0 +1,16 @@
+{% extends 'layouts/base.html' %}
+{% block content%}
+<h3>Sucursales</h3>
+
+<div class="card-container">
+ {% for fabrica in fabricas %}
+    <article class="card-fabrica">
+    <a href="{% url 'sucursal' id=fabrica.id %}"><h5>{{fabrica.nombre}}</h5></a>
+        <p>Ciudad: {{fabrica.localizacion.nombre}}</p>
+        <p>Dirección: {{fabrica.direccion}}</p> 
+    </article>
+{% endfor %}   
+</div>
+
+
+{%endblock%}

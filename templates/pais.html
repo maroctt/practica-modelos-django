@@ -1,0 +1,13 @@
+{%extends 'layouts/base.html'%}
+{%block content%}
+    <h3>{{pais}}</h3>
+
+    
+    {%for ciudad in ciudades%}
+
+        <p class="pais">📍 {{ciudad}}</p>
+    {%endfor%}
+
+    <div class="btn-back"><a href="{%url 'nosotros' %}"> <i class="fa-solid fa-chevron-left"></i> VOLVER</a></div>
+
+{%endblock%}

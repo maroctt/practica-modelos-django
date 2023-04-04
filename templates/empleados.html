@@ -1,0 +1,22 @@
+{% extends 'layouts/base.html' %}
+{%block content%}
+<h3>Empleados</h3>
+<div class="puestos">
+    {% for puesto, empleados in lista %}
+    <div class="puesto">
+        <h5>{{ puesto }}</h5>
+        <ul>
+            {% for empleado  in empleados %}
+            <li>
+                <a href="{% url 'empleado' dni=empleado.dni%}">
+                    {{empleado.nombre}}, {{empleado.apellido}}
+                    
+                </a><p>({{empleado.fabrica}})</p>
+            </li>
+            {% endfor %} 
+        </ul>
+    </div>
+    {% endfor %}
+    
+</div>
+{%endblock%}
